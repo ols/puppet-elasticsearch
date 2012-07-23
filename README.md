@@ -1,9 +1,5 @@
 Puppet module for [elasticsearch] on Ubuntu. 
 
-This module roughly matches the behavior of the `.deb` file shipped with
-elasticsearch version 0.19. I can't use 0.19 with the current version of
-[logstash], however, hence this module.
-
 [logstash]: https://github.com/logstash/logstash
 
 ## Prerequisites
@@ -16,14 +12,14 @@ elasticsearch version 0.19. I can't use 0.19 with the current version of
     cd /etc/puppet/modules
     git clone git://github.com/garthk/puppet-elasticsearch elasticsearch
     cd elasticsearch
-    make fetch # for default 0.18.7 download
+    make fetch
 
 Without `make`, do `./download.sh`.
 
 ## Usage
 
     class { 'elasticsearch':
-      version      => '0.18.7',
+      version      => '0.19.8',
       java_package => 'openjdk-6-jre-headless',
       dbdir        => '/var/lib/elasticsearch',
       logdir       => '/var/log/elasticsearch',
