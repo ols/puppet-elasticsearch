@@ -1,5 +1,5 @@
 class elasticsearch::params {
-  $version = "0.19.4"
+  $version = "0.20.2"
   $java_package = "openjdk-6-jre-headless"
   $dbdir = "/var/lib/elasticsearch"
   $logdir = "/var/log/elasticsearch"
@@ -64,7 +64,7 @@ class elasticsearch(
 
   file { $tmptarchive:
     ensure  => present,
-    source  => "puppet:///elasticsearch/${tarchive}",
+    source  => "puppet:///modules/elasticsearch/${tarchive}",
     owner   => 'elasticsearch',
     mode    => '0644',
   }
